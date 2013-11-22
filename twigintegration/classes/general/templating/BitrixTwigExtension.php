@@ -22,6 +22,7 @@ class BitrixTwigExtension extends Twig_Extension
             'POST_FORM_ACTION_URI' => POST_FORM_ACTION_URI,
             'DEFAULT_TEMPLATE_PATH' => self::DEFAULT_TEMPLATE_PATH,
             '_REQUEST' => $_REQUEST,
+            'SITE_SERVER_NAME' => SITE_SERVER_NAME,
         );
     }
 

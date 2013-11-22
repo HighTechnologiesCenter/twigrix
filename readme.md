@@ -32,6 +32,7 @@
 - `POST_FORM_ACTION_URI` - `POST_FORM_ACTION_URI` (константа битрикса)
 - `DEFAULT_TEMPLATE_PATH` - `DEFAULT_TEMPLATE_PATH` (константа, определенная в classes/general/templating/BitrixTwigExtension.php)
 - `_REQUEST` => `$_REQUEST`
+- `SITE_SERVER_NAME` => `SITE_SERVER_NAME` (глобальная переменная битрикса)
 
 **Функции из битрикса (все функции принимают те же аргументы что в битриксе)**
 

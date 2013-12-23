@@ -4,15 +4,15 @@ $strPath2Lang = str_replace("\\", "/", __FILE__);
 $strPath2Lang = substr($strPath2Lang, 0, strlen($strPath2Lang)-18);
 include(GetLangFileName($strPath2Lang."/lang/", "/install/index.php"));
 
-class twigintegration extends CModule
+class htc_twigintegrationmodule extends CModule
 {
-    public $MODULE_ID = "twigintegration";
+    var $MODULE_ID = "htc.twigintegrationmodule";
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
     public $MODULE_DESCRIPTION;
 
-    public function twigintegration()
+    public function htc_twigintegrationmodule()
     {
         $arModuleVersion = array();
 
@@ -27,19 +27,22 @@ class twigintegration extends CModule
 
         $this->MODULE_NAME = GetMessage("TWIG_INTEGRATION_MODULE_NAME");
         $this->MODULE_DESCRIPTION = GetMessage("TWIG_INTEGRATION_MODULE_DESC");
+        $this->PARTNER_NAME = "HIGH TECHNOLOGIES CENTER";
+        $this->PARTNER_URI = "http://htc-cs.com";
+        $this->MODULE_ID = "htc.twigintegrationmodule";
     }
 
     public function DoInstall()
     {
         global $DOCUMENT_ROOT, $APPLICATION;
-        RegisterModule("twigintegration");
+        RegisterModule("htc.twigintegrationmodule");
         $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_INSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/twigintegration/install/step.php");
     }
 
     public function DoUninstall()
     {
         global $DOCUMENT_ROOT, $APPLICATION;
-        UnRegisterModule("twigintegration");
+        UnRegisterModule("htc.twigintegrationmodule");
         $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_UNINSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/twigintegration/install/unstep.php");
     }
 }

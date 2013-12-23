@@ -1,6 +1,6 @@
 <?php
 CJSCore::Init(array("jquery"));
-$moduleId = "twigintegration";
+$moduleId = "htc.twigintegrationmodule";
 $right = $APPLICATION->GetGroupRight($moduleId);
 if ($right >= "R") {
     IncludeModuleLangFile($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/options.php");
@@ -39,7 +39,7 @@ if ($right >= "R") {
 
     if ($REQUEST_METHOD == "POST" && strlen($Update.$Apply.$RestoreDefaults) > 0 && $right == "W" && check_bitrix_sessid()) {
         if (strlen($RestoreDefaults) > 0) {
-            COption::RemoveOption("twigintegration");
+            COption::RemoveOption("htc.twigintegrationmodule");
         } else {
             foreach ($allOptions as $option) {
                 $name = $option[0];
@@ -47,7 +47,7 @@ if ($right >= "R") {
                 if ($option[2][0] == "checkbox" && $value != "Y") {
                     $value = "N";
                 }
-                COption::SetOptionString("twigintegration", $name, $value, $option[1]);
+                COption::SetOptionString("htc.twigintegrationmodule", $name, $value, $option[1]);
             }
         }
 
@@ -68,13 +68,13 @@ if ($right >= "R") {
     }
 
     ?>
-    <form method="post" name="twigintegration_opt_form"  action="<?=$APPLICATION->GetCurPage()?>?mid=<?=urlencode($moduleId)?>&amp;lang=<?=LANGUAGE_ID?>">
+    <form method="post" name="twigintegrationmodule_opt_form"  action="<?=$APPLICATION->GetCurPage()?>?mid=<?=urlencode($moduleId)?>&amp;lang=<?=LANGUAGE_ID?>">
         <?php
         $tabControl->Begin();
         $tabControl->BeginNextTab();
         $notes = array();
         foreach ($allOptions as $option):
-            $value = COption::GetOptionString("twigintegration", $option[0]);
+            $value = COption::GetOptionString("htc.twigintegrationmodule", $option[0]);
             $type = $option[2];
             if (isset($option[3])) {
                 $notes[] = $option[3];
@@ -148,7 +148,7 @@ if($_POST["clear_twig_cache"] === "y") {
     $(document).ready(function(){
         $("#clear-twig-cache").click(function(){
             $("input[name='clear_twig_cache']").val("y");
-            $("form[name='twigintegration_opt_form']").submit();
+            $("form[name='twigintegrationmodule_opt_form']").submit();
         });
     });
 </script>

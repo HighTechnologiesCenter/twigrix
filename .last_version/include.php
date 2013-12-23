@@ -1,7 +1,7 @@
 <?php
-//путь вычисляется относительно папки с модулем twigintegration
+//путь вычисляется относительно папки с модулем htc.twigintegrationmodule
 CModule::AddAutoloadClasses(
-    'twigintegration',
+    'htc.twigintegrationmodule',
     array(
         'TwigTemplateEngine' => 'classes/general/templating/TwigTemplateEngine.php',
         'BitrixTwigExtension' => 'classes/general/templating/BitrixTwigExtension.php',
@@ -12,7 +12,7 @@ CModule::AddAutoloadClasses(
 
 // Initialize Twig template engine
 $documentRoot = $_SERVER['DOCUMENT_ROOT'];
-$cacheStoragePathOption = COption::GetOptionString("twigintegration", "cache_storage_path");
+$cacheStoragePathOption = COption::GetOptionString("htc.twigintegrationmodule", "cache_storage_path");
 
 if ($cacheStoragePathOption == "") {
     $cacheStoragePath = $documentRoot . BX_PERSONAL_ROOT . "/cache/twig";

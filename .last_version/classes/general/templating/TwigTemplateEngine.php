@@ -12,7 +12,7 @@ class TwigTemplateEngine
     {
         Twig_Autoloader::register();
 
-        $debugModeOptionValue = COption::GetOptionString("twigintegration", "debug_mode");
+        $debugModeOptionValue = COption::GetOptionString("htc.twigintegrationmodule", "debug_mode");
         $debugMode = ($debugModeOptionValue == "Y") ? true : false;
 
         $loader = new Twig_Loader_Filesystem($templateRootPath);

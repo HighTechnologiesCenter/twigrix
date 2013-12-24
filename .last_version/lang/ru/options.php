@@ -1,5 +1,5 @@
 <?php
-$MESS["TWIG_INTEGRATION_OPTIONS_DEBUG_MODE"] = "Ð ÐµÐ¶Ð¸Ð¼ debug";
-$MESS["TWIG_INTEGRATION_OPTIONS_CACHE_STORAGE_PATH"] = "ÐŸÑƒÑ‚ÑŒ Ð´Ð¾ ÐºÐµÑˆÐ° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð¾Ð² twig (Ð¾Ñ‚ ÐºÐ¾Ñ€Ð½Ñ ÑÐ°Ð¹Ñ‚Ð°)";
-$MESS["TWIG_INTEGRATION_CLEAR_CACHE_TITLE"] = "ÐžÑ‡Ð¸ÑÑ‚ÐºÐ° ÐºÐµÑˆÐ° ÑˆÐ°Ð±Ð»Ð¾Ð½Ð¾Ð²";
-$MESS["TWIG_INTEGRATION_CLEAR_CACHE_ACTION"] = "ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ";
+$MESS["TWIG_INTEGRATION_OPTIONS_DEBUG_MODE"] = "Ðåæèì debug";
+$MESS["TWIG_INTEGRATION_OPTIONS_CACHE_STORAGE_PATH"] = "Ïóòü äî êåøà øàáëîíîâ twig (îò êîðíÿ ñàéòà)";
+$MESS["TWIG_INTEGRATION_CLEAR_CACHE_TITLE"] = "Î÷èñòêà êåøà øàáëîíîâ";
+$MESS["TWIG_INTEGRATION_CLEAR_CACHE_ACTION"] = "Î÷èñòèòü";

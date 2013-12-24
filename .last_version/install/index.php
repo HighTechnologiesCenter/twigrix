@@ -27,7 +27,7 @@ class htc_twigintegrationmodule extends CModule
 
         $this->MODULE_NAME = GetMessage("TWIG_INTEGRATION_MODULE_NAME");
         $this->MODULE_DESCRIPTION = GetMessage("TWIG_INTEGRATION_MODULE_DESC");
-        $this->PARTNER_NAME = "Ð¦ÐµÐ½Ñ‚Ñ€ Ð’Ñ‹ÑÐ¾ÐºÐ¸Ñ… Ð¢ÐµÑ…Ð½Ð¾Ð»Ð¾Ð³Ð¸Ð¹";
+        $this->PARTNER_NAME = "Öåíòð Âûñîêèõ Òåõíîëîãèé";
         $this->PARTNER_URI = "http://htc-cs.com";
     }
 

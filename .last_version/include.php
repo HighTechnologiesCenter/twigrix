@@ -1,5 +1,5 @@
 <?php
-//Ð¿ÑƒÑ‚ÑŒ Ð²Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÑ‚ÑÑ Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð¿Ð°Ð¿ÐºÐ¸ Ñ Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¼ htc.twigintegrationmodule
+//ïóòü âû÷èñëÿåòñÿ îòíîñèòåëüíî ïàïêè ñ ìîäóëåì htc.twigintegrationmodule
 CModule::AddAutoloadClasses(
     'htc.twigintegrationmodule',
     array(

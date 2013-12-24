@@ -27,8 +27,8 @@ class htc_twigintegrationmodule extends CModule
 
         $this->MODULE_NAME = GetMessage("TWIG_INTEGRATION_MODULE_NAME");
         $this->MODULE_DESCRIPTION = GetMessage("TWIG_INTEGRATION_MODULE_DESC");
-        $this->PARTNER_NAME = "Центр Высоких Технологий";
-        $this->PARTNER_URI = "http://htc-cs.com";
+        $this->PARTNER_NAME = GetMessage("TWIG_INTEGRATION_MODULE_PARTNER");
+        $this->PARTNER_URI = GetMessage("TWIG_INTEGRATION_MODULE_URI");
     }
 
     public function DoInstall()

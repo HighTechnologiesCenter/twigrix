@@ -50,6 +50,6 @@ class htc_twigintegrationmodule extends CModule
      */
     public static function getDocumentRoot()
     {
-        return (string)@$_SERVER["DOCUMENT_ROOT"];
+        return @$_SERVER["DOCUMENT_ROOT"];
     }
 }

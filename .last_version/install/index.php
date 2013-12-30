@@ -1,8 +1,8 @@
 <?php
 global $MESS;
 $strPath2Lang = str_replace("\\", "/", __FILE__);
-$strPath2Lang = substr($strPath2Lang, 0, strlen($strPath2Lang)-18);
-include(GetLangFileName($strPath2Lang."/lang/", "/install/index.php"));
+$strPath2Lang = substr($strPath2Lang, 0, strlen($strPath2Lang) - 18);
+include(GetLangFileName($strPath2Lang . "/lang/", "/install/index.php"));
 
 class htc_twigintegrationmodule extends CModule
 {
@@ -18,7 +18,7 @@ class htc_twigintegrationmodule extends CModule
 
         $path = str_replace("\\", "/", __FILE__);
         $path = substr($path, 0, strlen($path) - strlen("/index.php"));
-        include($path."/version.php");
+        include($path . "/version.php");
 
         if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion)) {
             $this->MODULE_VERSION = $arModuleVersion["VERSION"];
@@ -33,15 +33,23 @@ class htc_twigintegrationmodule extends CModule
 
     public function DoInstall()
     {
-        global $DOCUMENT_ROOT, $APPLICATION;
+        global $APPLICATION;
         RegisterModule("htc.twigintegrationmodule");
-        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_INSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/twigintegration/install/step.php");
+        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_INSTALL_TITLE"), self::getDocumentRoot() . "/bitrix/modules/twigintegration/install/step.php");
     }
 
     public function DoUninstall()
     {
-        global $DOCUMENT_ROOT, $APPLICATION;
+        global $APPLICATION;
         UnRegisterModule("htc.twigintegrationmodule");
-        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_UNINSTALL_TITLE"), $DOCUMENT_ROOT."/bitrix/modules/twigintegration/install/unstep.php");
+        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_UNINSTALL_TITLE"), self::getDocumentRoot() . "/bitrix/modules/twigintegration/install/unstep.php");
+    }
+
+    /**
+     * @return string
+     */
+    public static function getDocumentRoot()
+    {
+        return (string)@$_SERVER["DOCUMENT_ROOT"];
     }
 }

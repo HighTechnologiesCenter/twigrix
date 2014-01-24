@@ -1,51 +1,56 @@
-Данный модуль реализует подключение движка шаблонизации Twig
+# Twigrix
 
-**Установка**
+Модуль подключения шаблонизатора Twig для Битрикс
 
-- Загрузить и установить модуль через Marketplace. После установки он появится в пункте "установленные решения" - "Подключение шаблонизатора Twig"
-- Twig поставляется вместе с модулем и находится внутри модуля в папке vendor/Twig*
+## Установка
 
-**Использование**
+* Загрузить и установить модуль через Маркетплейс Битрикс. 
+* После установки он появится в пункте "установленные решения" - "Подключение шаблонизатора Twig".
 
-- В init.php нужно подключить модуль `CModule::IncludeModule("twigintegration");`
-- В настройках модуля (Настройки - Настройки продукта - Настройки модулей - Подключение шаблонизатора Twig) на время разработки удобнее включить режим debug. В режиме debug показываются ошибки в шаблонах и доступна функция dump
-- Очистить кеш шаблонов можно в настройках модуля (Настройки - Настройки продукта - Настройки модулей - Подключение шаблонизатора Twig)
-- Для обработки шаблонизатором twig шаблон и языковые файлы должны иметь расширение twig
+Twig поставляется вместе с модулем и находится внутри модуля в папке `vendor/Twig`
 
-**Модуль передает в twig**
+## Использование
 
-**Переменные доступные в шаблоне битрикса (название переменной в twig - эта переменная в битриксе)**
+* В init.php необходимо подключить модуль с помощью `CModule::IncludeModule("twigintegration");`.
+* В настройках модуля (Настройки — Настройки продукта — Настройки модулей — Подключение шаблонизатора Twig) на время разработки удобнее включить режим `debug`. В режиме debug показываются ошибки в шаблонах и доступна функция `dump`.
+* Очистить кеш шаблонов можно в настройках модуля (Настройки — Настройки продукта — Настройки модулей — Подключение шаблонизатора Twig).
+* Для обработки шаблонизатором Twig шаблон и языковые файлы должны иметь расширение `.twig`.
 
-- `params` - `$arParams`
-- `result` - `$arResult`
-- `langMessages` - `$arLangMessages`
-- `template` - `$template`
-- `templateFolder` - `$templateFolder`
-- `parentTemplateFolder` - `$parentTemplateFolder`
+## Работа с шаблонами
 
-**Другие переменные**
+### Переменные Битрикс, передаваемые в Twig-шаблон
 
-- `APPLICATION` - `$APPLICATION` (глобальная переменная битрикса)
-- `LANG` - `LANG` (константа битрикса)
-- `POST_FORM_ACTION_URI` - `POST_FORM_ACTION_URI` (константа битрикса)
-- `DEFAULT_TEMPLATE_PATH` - `DEFAULT_TEMPLATE_PATH` (константа, определенная в classes/general/templating/BitrixTwigExtension.php)
-- `_REQUEST` => `$_REQUEST`
-- `SITE_SERVER_NAME` => `SITE_SERVER_NAME` (глобальная переменная битрикса)
+* `params` — `$arParams`;
+* `result` — `$arResult`;
+* `langMessages` — `$arLangMessages`;
+* `template` — `$template`;
+* `templateFolder` — `$templateFolder`;
+* `parentTemplateFolder` — `$parentTemplateFolder`.
 
-**Функции из битрикса (все функции принимают те же аргументы что в битриксе)**
+### Другие переменные
 
-- `ShowMessage`
-- `bitrix_sessid_post`
-- `bitrix_sessid_get`
-- `ShowError`
-- `ShowNote`
+* `APPLICATION` — `$APPLICATION` (глобальная переменная Битрикс);
+* `LANG` — `LANG` (константа Битрикс);
+* `POST_FORM_ACTION_URI` — `POST_FORM_ACTION_URI` (константа Битрикс);
+* `DEFAULT_TEMPLATE_PATH` — `DEFAULT_TEMPLATE_PATH` (константа, определенная в `classes/general/templating/BitrixTwigExtension.php`);
+* `_REQUEST` — `$_REQUEST`;
+* `SITE_SERVER_NAME` — `SITE_SERVER_NAME` (глобальная переменная Битрикс).
 
-**Дополнительные функции**
+### Функции Битрикс, доступные в Twig-шаблоне (все функции принимают те же аргументы, что в Битриксе)
 
-- `IsUserAdmin` (аналогично вызову `$USER->IsAdmin()`)
-- `IsUserAuthorized` (аналогично вызову `$USER->IsAuthorized()`)
+* `ShowMessage`;
+* `bitrix_sessid_post`;
+* `bitrix_sessid_get`;
+* `ShowError`;
+* `ShowNote`.
 
-**Фильтры**
+### Дополнительные функции
 
-- `formatDate` - форматирование даты с помощью битриксовой функции FormatDateFromDB
-- `russianPluralForm` - получение множественной формы слова. Пример: `{{ 'товар|товара|товаров'|russianPluralForm(2) }}`
+* `IsUserAdmin` (аналогично вызову `$USER->IsAdmin()`);
+* `IsUserAuthorized` (аналогично вызову `$USER->IsAuthorized()`).
+
+### Фильтры
+
+* `formatDate` - форматирование даты с помощью функции Битрикс `FormatDateFromDB()`;
+* `russianPluralForm` - получение множественной формы слова.  
+Пример: `{{ 'товар|товара|товаров'|russianPluralForm(2) }}`

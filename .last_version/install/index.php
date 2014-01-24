@@ -35,14 +35,12 @@ class htc_twigintegrationmodule extends CModule
     {
         global $APPLICATION;
         RegisterModule("htc.twigintegrationmodule");
-        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_INSTALL_TITLE"), self::getDocumentRoot() . "/bitrix/modules/twigintegration/install/step.php");
     }
 
     public function DoUninstall()
     {
         global $APPLICATION;
         UnRegisterModule("htc.twigintegrationmodule");
-        $APPLICATION->IncludeAdminFile(GetMessage("TWIG_INTEGRATION_UNINSTALL_TITLE"), self::getDocumentRoot() . "/bitrix/modules/twigintegration/install/unstep.php");
     }
 
     /**

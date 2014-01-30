@@ -1,5 +1,5 @@
 <?php
-$MESS['TWIG_INTEGRATION_MODULE_NAME'] = "Twig-шаблонизация компонентов";
+$MESS['TWIG_INTEGRATION_MODULE_NAME'] = "Twigrix (Twig-шаблонизация компонентов)";
 $MESS['TWIG_INTEGRATION_MODULE_DESC'] = "Модуль для подключения шаблонизатора Twig";
 
 $MESS['TWIG_INTEGRATION_INSTALL_TITLE'] = "Установка модуля для подключения шаблонизатора Twig";
